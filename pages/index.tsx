@@ -17,9 +17,15 @@ export default function Home() {
       console.log(error);
     }
   }
+
+  async function logout() {
+    await supabase.auth.signOut();
+  }
+
   return (
     <div>
       <button onClick={login}>Login</button>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 }
